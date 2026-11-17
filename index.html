@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#f8f5ef" />
   <meta name="description" content="Learn by doing. Build your business one small step at a time with Peachology." />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="Peachology" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="icon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="icon.svg" />
   <title>Peachology — Your business, in progress</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,11 +35,18 @@
     </aside>
 
     <main class="main-area">
-      <header class="topbar"><button class="mobile-menu" id="menuToggle" aria-label="Open menu">☰</button><div class="breadcrumb">Your space <span>/</span> <b id="crumb">Home</b></div><div class="top-actions"><button class="icon-button" aria-label="Notifications">♧<i></i></button><div class="top-avatar">A</div></div></header>
+      <header class="topbar"><button class="mobile-menu" id="menuToggle" aria-label="Open menu">☰</button><div class="breadcrumb">Your space <span>/</span> <b id="crumb">Home</b></div><a class="mobile-brand" href="#home"><span class="brand-mark">p<span>·</span></span> peachology</a><div class="top-actions"><button class="icon-button install-button" id="installButton" aria-label="Install Peachology" hidden>⇩</button><button class="icon-button" aria-label="Notifications">♧<i></i></button><div class="top-avatar">A</div></div></header>
       <div class="page-content" id="pageContent"></div>
+      <nav class="mobile-tabs" aria-label="App navigation">
+        <button class="mobile-tab active" data-page="home"><span class="tab-icon">⌂</span><span>Home</span></button>
+        <button class="mobile-tab" data-page="courses"><span class="tab-icon">▤</span><span>Learn</span></button>
+        <button class="mobile-tab" data-page="builder"><span class="tab-icon">✳</span><span>Build</span></button>
+        <button class="mobile-tab" data-page="community"><span class="tab-icon">◉</span><span>Community</span></button>
+      </nav>
     </main>
   </div>
   <div class="toast" id="toast" role="status"></div>
   <script src="app.js"></script>
+  <script>if ('serviceWorker' in navigator) window.addEventListener('load', () => navigator.serviceWorker.register('./service-worker.js').catch(() => {}));</script>
 </body>
 </html>
