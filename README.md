@@ -1,22 +1,32 @@
-# Peachology Learning App
+# Peachology Mobile App
 
-A mobile-first, installable web app (PWA) for Peachology learners. It combines practical entrepreneurship courses, lesson progress, a step-by-step business idea builder, and a lightweight community feed.
+Peachology is an iOS and Android app built with Expo and React Native. This project targets phones only; it does not include a website or web build.
 
-## Run locally
+## Run the app
 
-Serve this folder over HTTPS or through a local web server, then open it on a phone. Use the browser's **Add to Home Screen** action to install it. The app uses plain HTML, CSS, and JavaScript, so no build step or package installation is needed. The service worker caches the core app shell for repeat/offline launches.
+1. Install Node.js and Expo Go on your iPhone or Android phone.
+2. In this project folder, run `npm install` and then `npx expo start`.
+3. Scan the QR code with Expo Go (Android) or the iPhone Camera app.
 
-## Deploy to Vercel
+## Build installable apps
 
-This is a static site and can be deployed directly from a GitHub repository:
+Use Expo Application Services (EAS) for device builds:
 
-1. Push this folder to a GitHub repository.
-2. In Vercel, choose **Add New → Project** and import the repository.
-3. Leave the framework preset as **Other**, with no build command and the project root as the output directory.
-4. Deploy. Vercel serves `index.html` from the project root.
+- Preview build: `npx eas-cli build --platform all --profile preview`
+- Store build: `npx eas-cli build --platform all --profile production`
 
-## Prototype notes
+Store publishing also requires Apple Developer and Google Play developer accounts. App Store and Play Store submission happen through their respective consoles after building.
 
-- Business Builder fields are saved to the browser's local storage on the final step.
-- Course cards, filters, responsive navigation, and community post creation are interactive.
-- This front-end prototype does not include accounts, cloud sync, instructor tools, payments, or a back-end database.
+## Included
+
+- Native phone navigation with Home, Learn, Build, and Community tabs.
+- Entrepreneurship courses, lesson outlines, and progress indicators.
+- A three-step business idea planner saved on-device with AsyncStorage.
+- A community feed and local post composer.
+
+This prototype does not yet have accounts, cloud synchronization, instructor tools, or server-backed community. Vercel does not build native iOS or Android binaries; use EAS Build for those. The previous web/PWA source files have been removed.
+
+## Stack
+
+- Expo SDK 58 and React Native 0.88.
+- `@react-native-async-storage/async-storage` for on-device plan persistence.

@@ -1,0 +1,13 @@
+{
+  "expo": {
+    "name": "Peachology",
+    "slug": "peachology-mobile",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "platforms": ["ios", "android"],
+    "icon": "./assets/icon.png",
+    "ios": { "supportsTablet": false, "bundleIdentifier": "com.peachology.learn" },
+    "android": { "package": "com.peachology.learn" }
+  }
+}
